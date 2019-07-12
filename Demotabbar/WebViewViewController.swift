@@ -9,7 +9,7 @@
 import UIKit
 
 class WebViewViewController: UIViewController, UIWebViewDelegate {
-    
+     @IBOutlet weak var textInput: UITextField!
     @IBOutlet weak var myWebView: UIWebView!
     @IBOutlet weak var showBack: UIButton!
     @IBOutlet weak var showNext: UIButton!
@@ -31,7 +31,7 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func backHome(_ sender: Any) {
-        NotificationCenter.default.post(name: .showColor, object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: .showColor, object: textInput.text , userInfo: nil)
        dismiss(animated: true, completion: nil)
        
     }

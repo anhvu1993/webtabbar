@@ -23,7 +23,9 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.removeObserver(true)
     }
     @objc func actionColor(data: Notification) {
+        guard let datas = data.object as? String else {return}
         self.view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        textInput.text = "hello"
+        textInput.text = datas
+        
     }
 }
