@@ -110,27 +110,48 @@
                         <viewLayoutGuide key="safeArea" id="MMQ-vH-XlD"/>
                     </view>
                     <navigationItem key="navigationItem" id="tcK-8r-bCc">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-back" id="cO4-js-kRU">
                             <connections>
                                 <action selector="backHome:" destination="o3n-pq-wGH" id="g6P-f5-v8y"/>
                             </connections>
                         </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="YwA-il-cUy">
+                            <rect key="frame" x="57" y="4" width="300" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hảy nhập vào đây" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F70-5T-4Bb">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="36"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="F70-5T-4Bb" firstAttribute="leading" secondItem="YwA-il-cUy" secondAttribute="leading" id="SPS-Yc-jdT"/>
+                                <constraint firstItem="F70-5T-4Bb" firstAttribute="top" secondItem="YwA-il-cUy" secondAttribute="top" id="cdT-al-Nm9"/>
+                                <constraint firstAttribute="bottom" secondItem="F70-5T-4Bb" secondAttribute="bottom" id="n2T-J6-sk9"/>
+                                <constraint firstAttribute="trailing" secondItem="F70-5T-4Bb" secondAttribute="trailing" id="yaf-ew-zA3"/>
+                            </constraints>
+                        </view>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myWebView" destination="0Uc-Yp-9HI" id="VKy-Tg-HTE"/>
                         <outlet property="showBack" destination="KP6-o3-Lz5" id="5KX-Ey-lmf"/>
                         <outlet property="showNext" destination="d7n-ET-YHW" id="8f8-Yt-tfU"/>
+                        <outlet property="textInput" destination="F70-5T-4Bb" id="KYp-Dc-j1i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSJ-Qs-lzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4850" y="168"/>
+            <point key="canvasLocation" x="4960.8000000000002" y="167.76611694152925"/>
         </scene>
         <!--web-->
         <scene sceneID="c8O-xF-m0b">
             <objects>
-                <viewController id="DxC-yU-hNI" customClass="showWebViewController" customModule="Demotabbar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DxC-yU-hNI" customClass="OpenwebViewController" customModule="Demotabbar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V9s-r2-HVT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +210,7 @@
                         <color key="selectedImageTintColor" red="0.93725490199999995" green="0.20784313730000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabarVc" destination="yxw-V1-55W" id="6PG-FD-G8c"/>
                         <segue destination="t6e-3n-CAu" kind="relationship" relationship="viewControllers" id="VBe-iN-fpv"/>
                         <segue destination="lIe-Mw-HLj" kind="relationship" relationship="viewControllers" id="Hah-FJ-fJE"/>
                         <segue destination="aL5-Ah-2WL" kind="relationship" relationship="viewControllers" id="Fhf-mu-wiN"/>
@@ -250,6 +272,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAn-Dt-oHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4161" y="168"/>
+        </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="Wbw-9u-7aW">
+            <objects>
+                <viewController id="GgE-UJ-ESL" customClass="WebViewViewController" customModule="Demotabbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9DB-Gc-TQz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFo-b9-mDr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-5p-EHp">
+                                <rect key="frame" x="5" y="588" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="JvR-84-6BE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" image="icons8-back"/>
+                                <connections>
+                                    <action selector="backWithWebView:" destination="GgE-UJ-ESL" eventType="touchUpInside" id="9ro-dI-cbU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiB-5w-1Ii">
+                                <rect key="frame" x="330" y="588" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Rpi-Cs-Y5N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" image="icons8-more_than_filled"/>
+                                <connections>
+                                    <action selector="nextWithWebView:" destination="GgE-UJ-ESL" eventType="touchUpInside" id="X75-Pw-uJj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qxe-5p-EHp" firstAttribute="leading" secondItem="GpB-Mb-aal" secondAttribute="leading" constant="5" id="0Ru-mB-PHR"/>
+                            <constraint firstItem="aiB-5w-1Ii" firstAttribute="bottom" secondItem="GpB-Mb-aal" secondAttribute="bottom" id="0xK-yD-YJr"/>
+                            <constraint firstItem="aiB-5w-1Ii" firstAttribute="trailing" secondItem="GpB-Mb-aal" secondAttribute="trailing" constant="5" id="5Rc-ae-NNT"/>
+                            <constraint firstItem="fFo-b9-mDr" firstAttribute="leading" secondItem="GpB-Mb-aal" secondAttribute="leading" id="Bee-ep-8CY"/>
+                            <constraint firstItem="GpB-Mb-aal" firstAttribute="bottom" secondItem="fFo-b9-mDr" secondAttribute="bottom" id="SV0-68-8og"/>
+                            <constraint firstItem="GpB-Mb-aal" firstAttribute="trailing" secondItem="fFo-b9-mDr" secondAttribute="trailing" id="h3c-5I-6Lf"/>
+                            <constraint firstItem="qxe-5p-EHp" firstAttribute="bottom" secondItem="GpB-Mb-aal" secondAttribute="bottom" id="mEy-G6-25P"/>
+                            <constraint firstItem="fFo-b9-mDr" firstAttribute="top" secondItem="GpB-Mb-aal" secondAttribute="top" id="s98-0g-swy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GpB-Mb-aal"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGi-Ws-Ftf">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-back" id="Nch-fj-oaY">
+                            <connections>
+                                <action selector="backHome:" destination="GgE-UJ-ESL" id="7SD-sK-WHn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="myWebView" destination="fFo-b9-mDr" id="gDf-8T-GQZ"/>
+                        <outlet property="showBack" destination="qxe-5p-EHp" id="aqk-hy-K5E"/>
+                        <outlet property="showNext" destination="aiB-5w-1Ii" id="aSs-Ca-e5o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwS-Y2-Did" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4961" y="168"/>
         </scene>
     </scenes>
     <resources>
